@@ -1,0 +1,353 @@
+/*
+ *	Hover Effect for Link & Button
+ *	Author: Niaj Morshed;
+ *	URL: http://devscorner.com/;
+ *	Purpose: Fell free to use & edit for any project;
+ *	Version: 1.0.0;
+ *	
+ *	How To Use:
+ *	
+ **************************
+ *	Link:
+ **************************
+ *
+ *	fade-in:
+ *	add a class to your anchor tag "fade_in"
+ *	example <a  href="#" class="fade_in"> link Text </a>
+ *	
+ *	Slide From Left:
+ *	add a class to your anchor tag "slide_from_left"
+ *	with a data-linkhover attribute, Use the same text for
+ *	both data-linkhover and the anchor tag, But if you want you
+ *	can use different text here. its your choice.
+ *	example <a href="#" class="slide_from_left" data-linkhover="Slide From Left"> Slide From Left </a>
+ *	
+ *	Slide From Right:
+ *	add a class to your anchor tag "slide_from_right"
+ *	with a data-linkhover attribute, Use the same text for
+ *	both data-linkhover and the anchor tag
+ *	example <a href="#" class="slide_from_right" data-linkhover="Slide From Right"> Slide From Left </a>
+ *
+ *	Slide From Top:
+ *	add a class to your anchor tag "slide_from_top"
+ *	<a href="#" data-linkhover="Slide From Top" class="slide_from_top"> Slide From Top </a>
+ *
+ *	Slide From bottom:
+ *	add a class to your anchor tag "slide_from_bottom"
+ *	<a href="#" data-linkhover="Slide From bottom" class="slide_from_bottom"> Slide From bottom </a>
+ *
+ *	Underline Effect:
+ *
+ *	Underline From Left:
+ *	add a class to your anchor tag "underline_from_left"
+ *	<a href="#" class="underline_from_left"> Underline From Left</a>
+ *	
+ *	Underline From right:
+ *	add a class to your anchor tag "underline_from_right"
+ *	<a href="#" class="underline_from_right"> Underline From right</a>
+ *
+ *	Underline From center:
+ *	add a class to your anchor tag "underline_from_center"
+ *	<a href="#" class="underline_from_center"> Underline From center</a>
+ *
+ *
+ **************************
+ *	Button:
+ **************************
+ *	Just add the class for the following effect inside your button
+ *	tag.
+ *	example: for Slide from left add a class "slide_from_left" to your
+ *	button.
+ *	
+ *	The classes are:
+ *
+ *	slide_from_left :		slide_from_left
+ *	slide_from_right :		slide_from_right
+ *	slide_from_top :		slide_from_top
+ *	slide_from_bottom :		slide_from_bottom
+ *	grow_box :				grow_box
+ *	grow_ellipse :			grow_ellipse
+ *	grow_skew_forward: 		grow_skew_forward
+ *	grow_skew_backward :	grow_skew_backward
+ *	grow_spin :				grow_spin
+ *
+ */
+
+
+body{
+	font-family: "Open Sans";
+	font-size: 16px;
+	line-height: 24px;
+	color: #454545;
+}
+.wrapper {
+	width: 800px;
+	max-width: 100%;
+	margin: 30px auto;
+}
+
+a {
+	color: #0196A7;
+	text-decoration: none;
+}
+
+
+/***********************
+*   Fade in BG
+***********************/
+.fade_in{
+	transition: all .4s;
+	padding: 4px;
+	padding-top: 0px;
+}
+.fade_in:hover{
+	background-color: #0196A7;
+	color: white;
+	padding: 4px;
+	padding-top: 0px;
+	transition: all .4s;
+}
+
+
+/***********************
+*   Slide Hover
+***********************/
+a[class^="slide"]{
+	position: relative;
+	display: inline-block;
+	padding: 0px 4px;
+	overflow: hidden;
+	vertical-align: bottom;
+}
+a[class^="slide"]::after{
+	content: attr(data-linkhover);
+	background-color: #0196A7;
+	color: white;
+	position: absolute;
+	display: block;
+	text-align: center;
+	transition: all .4s;
+}
+a[class^="slide"]:hover::after{
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	transition: all .4s;
+}
+
+
+
+
+.slide_from_left::after{
+	left: -100%;
+	right: 100%;
+	top: 0;
+}
+
+.slide_from_right::after{
+	left: 100%;
+	right: -100%;
+	top: 0;
+}
+
+.slide_from_top::after{
+	top: -100%;
+	bottom: 100%;
+}
+
+.slide_from_bottom::after{
+	top: 100%;
+	bottom: -100%;
+}
+
+
+
+
+/***********************
+*   Underline Hover
+***********************/
+a[class^="underline"]{
+	text-decoration: none;
+	padding: 3px;
+	position: relative;
+}
+a[class^="underline"]::after {
+	content: "";
+	border-bottom: 2px solid #0196A7;
+	position: absolute;
+	top: 100%;
+	transition: all .4s;
+}
+a[class^="underline"]:hover::after{
+	transition: all .4s;
+}
+
+
+
+.underline_from_left::after {
+	left: 0;
+	right: 100%;
+}
+.underline_from_left:hover::after{
+	right: 0;
+}
+
+
+.underline_from_right::after {
+	right: 0;
+	left: 100%;
+}
+.underline_from_right:hover::after{
+	left: 0;
+}
+
+
+.underline_from_center::after {
+	left: 50%;
+	right: 50%;
+}
+.underline_from_center:hover::after{
+	left: 0;
+	right: 0;
+}
+
+
+
+
+
+
+
+/*********************************************
+*	Code Start For Button Hover
+*********************************************/
+button{
+	box-sizing: border-box;
+}
+
+button[class^="slide"],
+button[class^="grow"]{
+	font-size: 30px;
+	background: #0196A7;
+	color: #fff;
+	border: 2px solid #0196A7;
+	padding: 20px 30px;
+	margin: 0px 10px 10px 0px;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	cursor: pointer;
+}
+button[class^="slide"]:hover,
+button[class^="grow"]:hover{
+	color: #0196A7;
+}
+button[class^="slide"]::after,
+button[class^="grow"]::after{
+	content: "";
+	background: #fff;
+	position: absolute;
+	display: block;
+	z-index: -1;
+	transition: all .40s;
+}
+
+button[class^="slide"]::after{
+	transition: all .40s;
+}
+button[class^="slide"]:hover::after{
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	transition: all .40s;
+}
+
+.slide_from_left::after {
+	top: 0;
+	bottom: 0;
+	left: -100%;
+	right: 100%;
+}
+.slide_from_right::after {
+	top: 0;
+	bottom: 0;
+	left: 100%;
+	right: -100%;
+}
+.slide_from_top::after {
+	top: -100%;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+}
+.slide_from_bottom::after {
+	top: 100%;
+	bottom: -100%;
+	left: 0;
+	right: 0;
+}
+
+button[class^="grow"]::after{
+	transition: all .4s ease;
+}
+button[class^="grow"]:hover::after{
+	transition: all .4s ease-out;
+}
+
+.grow_box::after{
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transform: scale(0,0);
+}
+.grow_box:hover::after{
+	transform: scale(1,1);
+}
+
+.grow_ellipse::after{
+	top: -150%;
+    left: -50%;
+    right: -50%;
+    bottom: -150%;
+    border-radius: 50%;
+    line-height: 8;
+    transform: scale(0,0);
+}
+.grow_ellipse:hover::after{
+    transform: scale(1,1);
+}
+
+.grow_skew_forward::after{
+	left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0,1);
+}
+.grow_skew_forward:hover::after{
+    transform: skewX(-45deg) scale(1,1);
+}
+
+.grow_skew_backward::after{
+	left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(45deg) scale(0,1);
+}
+.grow_skew_backward:hover::after{
+    transform: skewX(45deg) scale(1,1);
+}
+
+.grow_spin::after{
+	top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scale(0,0) rotate(180deg);
+}
+.grow_spin:hover::after{
+    transform: scale(1,1) rotate(0deg);
+}
