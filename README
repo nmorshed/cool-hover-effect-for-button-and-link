@@ -1,71 +1,7 @@
-Hover Effect for Link & Button
-Author: Niaj Morshed;
-URL: http://devscorner.com/cool-hover-effect-for-button-and-link/ ;
-Purpose: Fell free to use & edit for any project;
-Version: 1.0.0;
+##Hover Effect for Link & Button
 
-How To Use:
+Using these code you can create cool hover effect for button and link in your website.
+Just Download the code and add the CSS file to your html and add the respective class to your link
+or button for your respective effect.
 
-
-Link:
-
-
-fade-in:
-add a class to your anchor tag "fade_in"
-example <a  href="#" class="fade_in"> link Text </a>
-
-Slide From Left:
-add a class to your anchor tag "slide_from_left"
-with a data-linkhover attribute, Use the same text for
-both data-linkhover and the anchor tag, But if you want you
-can use different text here. its your choice.
-example <a href="#" class="slide_from_left" data-linkhover="Slide From Left"> Slide From Left </a>
-
-Slide From Right:
-add a class to your anchor tag "slide_from_right"
-with a data-linkhover attribute, Use the same text for
-both data-linkhover and the anchor tag
-example <a href="#" class="slide_from_right" data-linkhover="Slide From Right"> Slide From Left </a>
-
-Slide From Top:
-add a class to your anchor tag "slide_from_top"
-<a href="#" data-linkhover="Slide From Top" class="slide_from_top"> Slide From Top </a>
-
-Slide From bottom:
-add a class to your anchor tag "slide_from_bottom"
-<a href="#" data-linkhover="Slide From bottom" class="slide_from_bottom"> Slide From bottom </a>
-
-Underline Effect:
-
-Underline From Left:
-add a class to your anchor tag "underline_from_left"
-<a href="#" class="underline_from_left"> Underline From Left</a>
-
-Underline From right:
-add a class to your anchor tag "underline_from_right"
-<a href="#" class="underline_from_right"> Underline From right</a>
-
-Underline From center:
-add a class to your anchor tag "underline_from_center"
-<a href="#" class="underline_from_center"> Underline From center</a>
-
-
-
-Button:
-
-Just add the class for the following effect inside your button
-tag.
-example: for Slide from left add a class "slide_from_left" to your
-button.
-
-The classes are:
-
-slide_from_left :		slide_from_left
-slide_from_right :		slide_from_right
-slide_from_top :		slide_from_top
-slide_from_bottom :		slide_from_bottom
-grow_box :				grow_box
-grow_ellipse :			grow_ellipse
-grow_skew_forward: 		grow_skew_forward
-grow_skew_backward :	grow_skew_backward
-grow_spin :				grow_spin
+[See Live Demo](http://devscorner.com/cool-hover-effect-for-button-and-link/)
